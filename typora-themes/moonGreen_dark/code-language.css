@@ -1,0 +1,136 @@
+pre::after {
+    font-family: '霞鹜文楷';
+    font-weight: bolder;
+    position: absolute;
+    top: -33px ;
+    right: 1% ;
+    z-index: 99;
+    font-size: 1.1rem;
+	color:#00a8ff;
+}
+
+pre[lang$='javascript']:after,
+pre[lang$='js']:after {
+    content: 'JavaScript';
+}
+
+pre[lang$='typescript']:after,
+pre[lang$='ts']:after {
+    content: 'TypeScript';
+}
+
+pre[lang$='html']:after {
+    content: 'HTML';
+}
+
+pre[lang$='vue']:after {
+    content: 'Vue';
+}
+
+pre[lang$='react']:after {
+    content: 'React';
+}
+
+pre[lang$='shell']:after {
+    content: 'Shell';
+}
+
+pre[lang$='json']:after {
+    content: 'Json';
+}
+
+pre[lang$='python']:after {
+    content: 'Python';
+}
+
+pre[lang$='css']:after {
+    content: 'CSS';
+}
+
+pre[lang$='c']::after {
+    content: 'C';
+}
+
+pre[lang$='c++']:after {
+    content: 'C++';
+}
+
+pre[lang$='c#']:after {
+    content: 'C#';
+}
+
+pre[lang$='java']:after {
+    content: 'Java';
+}
+
+pre[lang$='Go']:after {
+    content: 'Go';
+}
+
+pre[lang$='golang']:after {
+    content: 'golang';
+}
+
+pre[lang$='ruby']:after {
+    content: 'Ruby';
+}
+
+pre[lang$='markdown']:after {
+    content: 'Markdown';
+}
+
+pre[lang$='php']:after {
+    content: 'PHP';
+}
+
+pre[lang$='sql']:after {
+    content: 'sql';
+}
+
+pre[lang$='R']:after {
+    content: 'R';
+}
+
+pre[lang$='golang']:after {
+    content: 'golang';
+}
+
+pre[lang$='matlab']:after {
+    content: 'MATLAB';
+}
+
+pre[lang$='asp']:after {
+    content: 'asp';
+}
+
+pre[lang$='kotlin']:after {
+    content: 'Kotlin';
+}
+
+pre[lang$='latex']:after {
+    content: 'latex';
+}
+
+pre[lang$='mysql']:after {
+    content: 'MySQL';
+}
+
+pre[lang$='rust']:after {
+    content: 'Rust';
+}
+
+pre[lang$='Scss']:after {
+    content: 'Scss';
+}
+
+pre[lang$='sqlite']:after {
+    content: 'SQLite';
+}
+
+pre[lang$='VB']:after {
+    content: 'VB';
+}
+
+pre[lang$='xaml']:after {
+    content: 'xaml';
+}

@@ -1,0 +1,270 @@
+/* ————————————————————————————————————————————标题编号———————————————————————————————————————————— */
+
+#write {
+    counter-reset: h1
+}
+
+h1 {
+    counter-reset: h2
+}
+
+h2 {
+    counter-reset: h3
+}
+
+h3 {
+    counter-reset: h4
+}
+
+h4 {
+    counter-reset: h5
+}
+
+h5 {
+    counter-reset: h6
+}
+
+/* #write h1:before, */
+#write h2:before,
+#write h3:before,
+#write h4:before,
+#write h5:before,
+#write h6:before {
+    font-family: "Microsoft YaHei";
+    color: rgb(129, 178, 154, 0.7);
+}
+
+#write h1:before {
+    counter-increment: h1;
+    content: counter(h1) ". "
+}
+
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h1) "."counter(h2) " "
+}
+
+#write h3:before,
+h3.md-focus.md-heading:before {
+    counter-increment: h3;
+    content: counter(h1) "."counter(h2) "."counter(h3) " "
+}
+
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) " "
+}
+
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) " "
+}
+
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) "  "
+}
+
+/** override the default style for focused headings */
+/* #write>h1.md-focus:before, */
+#write>h2.md-focus:before,
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: none;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+/* ————————————————————————————————————————————正文目录编号———————————————————————————————————————————— */
+.md-toc-inner {
+    text-decoration: none;
+}
+
+.md-toc-content {
+    counter-reset: h1toc
+}
+
+.md-toc-h1 {
+    margin-left: 0;
+    font-size: 1.05rem;
+    margin-top: 0.5em;
+    counter-reset: h2toc
+}
+
+/* .md-toc-content .md-toc-h1:nth-child(1) {
+    margin-top: 0;
+} */
+
+.md-toc-h2 {
+    font-size: 1rem;
+    padding-left: 2rem;
+    counter-reset: h3toc
+}
+
+.md-toc-h3 {
+    padding-left: 3.2rem;
+    font-size: 1rem;
+    counter-reset: h4toc
+}
+
+.md-toc-h4 {
+    padding-left: 4.4rem;
+    font-size: 1rem;
+    counter-reset: h5toc
+}
+
+.md-toc-h5 {
+    padding-left: 5.6rem;
+    font-size: 1rem;
+    counter-reset: h6toc
+}
+
+.md-toc-h6 {
+    padding-left: 6.8rem;
+    font-size: 1rem;
+}
+
+.md-toc-h1:before {
+    float: right;
+    color: transparent;
+    counter-increment: h1toc;
+    content: counter(h1toc) ". "
+}
+
+.md-toc-h1 .md-toc-inner {
+    color: #000 !important;
+    margin-left: 5px;
+}
+
+.md-toc-h2:before {
+    color: black;
+    counter-increment: h2toc;
+    content: counter(h1toc) ". "counter(h2toc) " "
+}
+
+.md-toc-h2 .md-toc-inner {
+    margin-left: 0;
+    text-decoration: none;
+}
+
+.md-toc-h3:before {
+    color: black;
+    counter-increment: h3toc;
+    content: counter(h1toc) ". "counter(h2toc) ". "counter(h3toc) " "
+}
+
+.md-toc-h3 .md-toc-inner {
+    margin-left: 0;
+}
+
+.md-toc-h4:before {
+    color: black;
+    counter-increment: h4toc;
+    content: counter(h1toc) ". "counter(h2toc) ". "counter(h3toc) ". "counter(h4toc) " "
+}
+
+.md-toc-h4 .md-toc-inner {
+    margin-left: 0;
+}
+
+.md-toc-h5:before {
+    color: black;
+    counter-increment: h5toc;
+    content: counter(h1toc) ". "counter(h2toc) ". "counter(h3toc) ". "counter(h4toc) ". "counter(h5toc) " "
+}
+
+.md-toc-h5 .md-toc-inner {
+    margin-left: 0;
+}
+
+.md-toc-h6:before {
+    color: black;
+    counter-increment: h6toc;
+    content: counter(h1toc) ". "counter(h2toc) ". "counter(h3toc) ". "counter(h4toc) ". "counter(h5toc) ". "counter(h6toc) " "
+}
+
+.md-toc-h6 .md-toc-inner {
+    margin-left: 0;
+}
+
+/* ————————————————————————————————————————————侧边栏大纲编号———————————————————————————————————————————— */
+.sidebar-content {
+    counter-reset: h1
+}
+
+.outline-h1 {
+    counter-reset: h2
+}
+
+.outline-h2 {
+    counter-reset: h3
+}
+
+.outline-h3 {
+    counter-reset: h4
+}
+
+.outline-h4 {
+    counter-reset: h5
+}
+
+.outline-h5 {
+    counter-reset: h6
+}
+
+/* 隐藏侧边栏一级标题编号 */
+.outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    float: right;
+    color: transparent;
+    content: counter(h1) ". "
+}
+
+/* 隐藏侧边栏一级标题编号 */
+/* .outline-h1>.outline-item-active>.outline-label:before {
+    color: rgb(160, 100, 100);
+} */
+
+.outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: counter(h1) "."counter(h2) " "
+}
+
+.outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: counter(h1) "."counter(h2) "."counter(h3) " "
+}
+
+.outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) " "
+}
+
+.outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) " "
+}
+
+.outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: counter(h1) "."counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " "
+}

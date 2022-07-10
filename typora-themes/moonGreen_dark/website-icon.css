@@ -1,0 +1,155 @@
+a::before {
+    display: inline-block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 1.1em 1.1em;
+    top: 0.2em;
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 0.2em;
+}
+
+a[href*="aliyundrive.com"]::before {
+    content: "";
+    background-image: url("ico/aliyundrive.ico");
+}
+
+a[href*="iconfont.cn"]::before {
+    content: "";
+    background-image: url("ico/iconfont.ico");
+}
+
+a[href*="ld246.com"]::before {
+    content: "";
+    background-image: url("ico/liandi.svg");
+}
+
+a[href*="obsidian.md"]::before {
+    content: "";
+    background-image: url("ico/obsidian.ico");
+}
+
+a[href*="baidu.com"]::before {
+    content: "";
+    background-image: url("ico/baidu.svg");
+}
+
+a[href*="bilibili.com"]::before {
+    content: "";
+    background-image: url("ico/bilibili.svg");
+}
+
+a[href*="cn.bing.com"]::before {
+    content: "";
+    background-image: url("ico/bing.svg");
+}
+
+a[href*="cnblogs.com"]::before {
+    content: "";
+    background-image: url("ico/cnblogs2.svg");
+}
+
+a[href*="csdn.net"]::before {
+    content: "";
+    background-image: url("ico/csdn.svg");
+}
+
+a[href*="gitee.com"]::before {
+    content: "";
+    background-image: url("ico/gitee.svg");
+}
+
+a[href*="github.com"]::before {
+    content: "";
+    background-image: url("ico/github.svg");
+}
+
+a[href*="lanzou.com"]::before {
+    content: "";
+    background-image: url("ico/lanzou.svg");
+}
+
+a[href*="jianguoyun.com"]::before {
+    content: "";
+    background-image: url("ico/jianguoyun.svg");
+}
+
+a[href*="pan.baidu.com"]::before {
+    content: "";
+    background-image: url("ico/pan.baidu.svg");
+}
+
+a[href*="imooc.com"]::before {
+    content: "";
+    background-image: url("ico/imooc.svg");
+}
+
+a[href*="icourse163.org"]::before {
+    content: "";
+    background-image: url("ico/icourse163.png");
+}
+
+a[href*="developer.mozilla.org"]::before {
+    content: "";
+    background-image: url("ico/mozilla.png");
+}
+
+a[href*="runoob.com"]::before {
+    content: "";
+    background-image: url("ico/runoob.ico");
+}
+
+a[href*="sspai.com"]::before {
+    content: "";
+    background-image: url("ico/sspai.svg");
+}
+
+a[href*="taobao.com"]::before {
+    content: "";
+    background-image: url("ico/taobao.svg");
+}
+
+a[href*="jd.com"]::before {
+    content: "";
+    background-image: url("ico/jingdong.svg");
+}
+
+a[href*="mi.com"]::before {
+    content: "";
+    background-image: url("ico/mi.svg");
+}
+
+a[href*="yuque.com"]::before {
+    content: "";
+    background-image: url("ico/yuque.svg");
+}
+
+a[href*="zhihu.com"]::before {
+    content: "";
+    background-image: url("ico/zhihu.svg");
+}
+
+a[href*="jianshu.com"]::before {
+    content: "";
+    background-image: url("ico/jianshu.svg");
+}
+
+a[href*="appinn.com"]::before {
+    content: "";
+    background-image: url("ico/appinn.jpg");
+}
+
+a[href*="topbook.cc"]::before {
+    content: "";
+    background-image: url("ico/topbook.png");
+}
+
+a[href*="open.163.com"]::before {
+    content: "";
+    background-image: url("ico/open.163.ico");
+}
+
+a[href*="study.163.com"]::before {
+    content: "";
+    background-image: url("ico/study.163.svg");
+}

@@ -1,0 +1,51 @@
+#typora-sidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+.in-text-selection,
+::selection {
+  background: #81b29a !important;
+}
+.menu-item-container a.menu-style-btn {
+  background-color: #fff !important;
+  color: #121415;
+}
+.menu-item-container a.menu-style-btn:hover {
+  background-color: var(--item-hover-bg-color) !important;
+}
+.menu-style-btn-2width {
+  text-align: center !important;
+}
+.file-list-item.active {
+  background: #3c3c3c;
+}
+#toggle-sourceview-btn {
+  background: #000 !important;
+}
+.md-fences {
+  background-color: #2d2d2d !important;
+}
+.CodeMirror-lines {
+  background-color: #2d2d2d !important;
+}
+.info-panel-tab-title:hover {
+  color: #81b29a;
+}
+.input-group-header-title,
+.content h3 {
+  color: #fff;
+}
+.input-group-header-hint {
+  color: #bdbdbd !important;
+}
+:root {
+  --bg-color: #313131;
+  --text-color: #fff;
+  --select-text-bg-color: #81b29a;
+  --select-text-font-color: auto;
+  --active-file-bg-color: #3c3c3c;
+  --monospace: "Lucida Console", Consolas, "Courier", monospace;
+  --title-bar-height: 20px;
+}
+.dropdown-menu {
+  background-color: #fff !important;
+}
