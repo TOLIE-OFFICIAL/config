@@ -14,3 +14,7 @@
 
 ![THEME_chnovk](./static/chnovk-preview.png)
 ![THEME_nord](./static/nord-preview.png)
+
+### 致谢
+[riyuzenn](https://github.com/riyuzenn/dotfiles)
+[Murzchnvok](https://github.com/Murzchnvok/polybar-collection)
