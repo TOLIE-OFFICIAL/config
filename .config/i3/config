@@ -32,6 +32,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
+# exec --no-startup-id nm-applet --no-agent
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
@@ -182,37 +183,42 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-bar {
+# bar {
     #output            LVDS1
-    status_command    i3status
-    position          top
-    workspace_buttons yes
+    #status_command    i3status
+   # position          top
+   # workspace_buttons yes
     #tray_output       none
     
     #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-    colors {
-        background #000000
-        statusline #ffffff
+    # colors {
+    #     background #000000
+    #     statusline #ffffff
 
-        focused_workspace  #ffffff #285577
-        active_workspace   #ffffff #333333
-        inactive_workspace #888888 #222222
-        urgent_workspace   #ffffff #900000
-    }
-}
+    #     focused_workspace  #ffffff #285577
+    #     active_workspace   #ffffff #333333
+    #     inactive_workspace #888888 #222222
+    #     urgent_workspace   #ffffff #900000
+    # }
+# }
 
 
-# 关机,锁屏
-# =================
-set $Locker i3lock && sleep 1
+# =======关机,锁屏==========
+ # 注掉wiki提供的关机设置
+# set $Locker i3lock && sleep 1
+set $i3lockwall bash ~/.config/i3/scripts/i3lock-multimonitor/lock && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    # 注掉wiki提供的关机设置
+    # bindsym l exec --no-startup-id $Locker, mode "default"
+    # bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    # bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym l exec --no-startup-id $i3lockwall, mode "default"
+    bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
 
@@ -223,20 +229,21 @@ mode "$mode_system" {
 
 # bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+q mode "$mode_system"
+# ==============================================
 
-# =================
 
-
-# #设置窗口边框等等
+#设置窗口边框等等
 new_window none
 new_float normal
 hide_edge_borders both
 
+# No borders or gaps when just one client is open
+hide_edge_borders smart
+smart_gaps on
 
 #设置窗口间距
 gaps inner 6
-#gaps outer 6
-
+gaps outer -1
 
 # 窗户颜色
 # 定义的参数，就和变量一样
@@ -245,41 +252,48 @@ set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
-# 窗口装饰					
+
+
+# =============窗口装饰============					
 #                       边框              	背景         			 文本                指标
-						#$bg-color就定于#2f343f 
+#$bg-color就定于#2f343f 
 client.focused          $bg-color             $bg-color         	$text-color          #00ff00
 client.unfocused        $inactive-bg-color    $inactive-bg-color 	$inactive-text-color #00ff00
 client.focused_inactive $inactive-bg-color    $inactive-bg-color 	$inactive-text-color #00ff00
 client.urgent           $urgent-bg-color      $urgent-bg-color   	$text-color          #00ff00
+#===========================================================
 
 
 ##=======自己配置 自启动=======
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lockr --blur 60 # 自带锁屏
-# exec --no-startup-id feh --bg-scale '/home/tolie/Pictures/background/兔儿白毛.jpg' #壁纸
-exec --no-startup-id feh --randomize --bg-fill /home/tolie/Pictures/background/*
-# exec --no-startup-id nm-applet
-# exec --no-startup-id  ~/.config/polybar/launch.sh  #启动polybar
-exec --no-startup-id picom
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lockr --blur 60 # 无操作10分钟自动锁屏
+# exec --no-startup-id xss-lock  -- $HOME/.config/i3/scripts/i3lock-multimonitor/lock -i
+exec --no-startup-id xss-lock --transfer-sleep-lock -- myblock --blur 60
+# exec --no-startup-id xss-lock -n $HOME/.config/i3/scripts/i3lock-multimonitor/dim-screen.sh -- $HOME/.config/i3/scripts/i3lock-multimonitor/lock.sh -i
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.config/i3/scripts/i3lock-multimonitor/lock.sh --blur 30 # 无操作10分钟自动锁屏
+
+# exec --no-startup-id feh --bg-scale '/home/tolie/Pictures/background/' #壁纸
+exec --no-startup-id feh --randomize --bg-fill $HOME/Pictures/background/dark_pics/*
+# exec_always --no-startup-id  $HOME/.config/polybar/launch.sh  #启动polybar
+exec_always --no-startup-id $HOME/polybar-collection/launch.sh #启动polybar
+exec --no-startup-id picom -b # 透明
 exec --no-startup-id /usr/bin/fcitx5    # 启动fcitx5输入法
-# exec --no-startup-id dunst  # dunst系统通知
-exec --no-startup-id xautolock -time 10 -locker i3lockr --blur 60 # 无操作10分钟自动锁屏
+exec --no-startup-id dunst  # dunst系统通知
 # ===========================================================================
 
 
-
 ##=======自己配置 快捷键=======
-bindsym $mod+d exec --no-startup-id rofi -theme slate -font "hack 12" -show drun -show-icons #搜索
+bindsym $mod+d exec --no-startup-id rofi -disable-history -theme slate -font "hack 12" -show drun -show-icons #搜索
 bindsym $mod+Shift+f exec --no-startup-id flameshot gui # 截图
 # bindsym $mod+n exec  --no-startup-id netease-cloud-music # 网易云音乐
-bindsym $mod+c exec  --no-startup-id chromium  # 谷歌浏览器
+# bindsym $mod+c exec  --no-startup-id chromium  # 谷歌浏览器
+bindsym $mod+c exec  --no-startup-id firefox  # firefox浏览器
 bindsym $mod+z exec  --no-startup-id ranger # 文件管理器
 # bindsym $mod+Return exec  konsole #打开终端
-bindsym $mod+p exec --no-startup-id i3lockr --blur 60 # 手动锁屏
-
+# bindsym $mod+Ctrl+Shift+l exec --no-startup-id i3lockr --blur 60 # 手动锁屏
+bindsym $mod+Ctrl+Shift+l exec $i3lockwall
 
 # 将工作区移至下一个/上一个工作区并跟随
 bindsym $mod+Ctrl+d   workspace next
 bindsym $mod+Ctrl+s   workspace prev
-
 ##==========================================
+# suspends
