@@ -11,3 +11,6 @@
 ### typora-themes使用方法
 1. 将typora-themes下的文件放在typora的主题文件目录
 2. 重启typora，正常切换主题
+
+![THEME_chnovk](./static/chnovk-preview.png)
+![THEME_nord](./static/nord-preview.png)
